@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import board.Controller.ArticleController;
+import board.Controller.MemberController;
 import board.dto.Article;
 import board.dto.Member;
 import board.util.Util;
@@ -25,6 +27,10 @@ public class App {
 
 		Scanner sc = new Scanner(System.in);
 
+		// Controller
+		MemberController memberController = new MemberController(sc, members);
+		ArticleController articleController = new ArticleController();
+
 		while (true) {
 			System.out.print("명령어 : ");
 			String command = sc.nextLine();
@@ -35,42 +41,10 @@ public class App {
 				continue;
 			}
 
+			// 회원가입 창구
 			if (command.equals("member join")) {
-
-				int id = members.size() + 1;
-
-				System.out.printf("로그인 아이디 : ");
-				String loginId = sc.nextLine();
-
-				// 초기화 이후 값을 받음
-				String loginPw = null;
-				String loginPwConfirm = null;
-
-				// 비밀번호가 일치하면 무한루프 탈출
-				while (true) {
-					System.out.printf("로그인 비밀번호 : ");
-					loginPw = sc.nextLine();
-
-					System.out.printf("로그인 비밀번호 확인 : ");
-					loginPwConfirm = sc.nextLine();
-
-					if (loginPw.equals(loginPwConfirm) == false) {
-						System.out.println("비밀번호를 다시 입력해주세요.");
-						continue;
-					}
-
-					break;
-				}
-
-				System.out.printf("이름 : ");
-				String name = sc.nextLine();
-
-				String regDate = Util.getCurrentDate();
-
-				Member member = new Member(id, regDate, loginId, loginPw, name);
-				members.add(member);
-
-				System.out.printf("%d번 회원 가입이 완료되었습니다.\n", id);
+				// 가입할때 넘김
+				memberController.dojoin();
 
 			}
 
