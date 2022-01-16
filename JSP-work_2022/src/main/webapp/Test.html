@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form Test</title>
+</head>
+<body>
+	<h2>Form Test</h2>
+	<!-- hr테그 : 줄긋기 -->
+	<hr>
+
+	<div>
+		<!-- form 테그 : url을 완성시켜서 주소창에 적용시켜줌 -->
+		<!-- action 속성 : 목적 url -->
+		<!-- input을 가져다가 queryString 을 만들어줌 -->
+		<form action="http://www.naver.com">
+
+			<!-- input 테그 : 데이터를 입력할 수 있는 다영한 형태의 ui를 제공 -->
+			<!--  type 속성 : 어떤 형태로 쓸거냐 -->
+			<!--  name 속성 : 어떤 이름으로 불러줄거냐 -->
+			<!--  value 속성 : 어떤 데이터를 쓸거냐 -->
+
+			<!-- 입력창 -->
+			<input type="text">
+
+			<!-- 전송 버튼 -->
+			<input type="submit">
+			
+			<!-- 숨김 데이터 -->
+			<input type="hidden">
+
+		</form>
+	</div>
+
+	<hr>
+	<h3>네이버 검색</h3>
+	<!-- 날씨 -->
+	<div>
+		<form action="https://search.naver.com/search.naver">
+			<input type="hidden" name="where" value="nexearch"/>
+			<input type="hidden" name="sm" value="top_hty"/>
+			<input type="hidden" name="fbm" value="0"/>
+			<input type="hidden" name="ie" value="utf8"/>
+			<input type="text" name="query"/>
+			<input type="submit"/>
+		</form>
+	</div>
+	
+	<hr>
+	<a href="https://www.daum.net/">다음으로 가기</a>
+	
+	
+</body>
+</html>

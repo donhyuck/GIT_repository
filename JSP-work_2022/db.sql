@@ -1,0 +1,19 @@
+DROP DATABASE IF EXISTS `add`;
+
+CREATE DATABASE `add`;
+
+USE `add`;
+
+CREATE TABLE addr (
+	idx INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	`name` VARCHAR(20) NOT NULL,
+	address VARCHAR(50) NOT NULL,
+	phone VARCHAR(14) NOT NULL
+);
+
+SELECT * FROM addr;
+
+INSERT INTO addr
+SET `name` = '홍길동',
+address = '서울',
+phone = '010-1234-1234';
